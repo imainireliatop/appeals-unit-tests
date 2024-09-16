@@ -7,7 +7,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Add VSTest.console.exe to the PATH
-      uses: darenm/Setup-VSTest@v1
+      uses: |
+        darenm/Setup-VSTest@v1
+        actions/checkout@v3.3.0
       
     - name: Change directory
       run: cd ".."
