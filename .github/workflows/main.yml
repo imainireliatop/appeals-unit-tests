@@ -9,6 +9,9 @@ jobs:
     - name: Add VSTest.console.exe to the PATH
       uses: darenm/Setup-VSTest@v1
       
+    - name: Change directory
+      run: cd "SeleniumCSharp"
+
     - name: Run test command
-      run: dir
+      run: vstest.console.exe ".\SeleniumCSharp\bin\Debug\net8.0\AppealsTests.dll"
       
