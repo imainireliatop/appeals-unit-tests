@@ -15,5 +15,6 @@ jobs:
     - name: Run test command
       run: |
         cd "..\..\unit-tests"
+        dir
         vstest.console.exe "SeleniumCSharp\bin\Debug\net8.0\AppealsTests.dll"
       
