@@ -9,7 +9,7 @@ namespace SeleniumCSharp
     public class Tests
     {
 
-        ChromeDriver driver;
+        IWebDriver driver;
         ChromeOptions options;
 
         [OneTimeSetUp]
@@ -18,7 +18,7 @@ namespace SeleniumCSharp
             string path = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
             options = new ChromeOptions();
             options.AddArgument("--headless=new");
-            ChromeDriver driver = new ChromeDriver(path + @"\drivers\", options);
+            driver = new ChromeDriver(path + @"\drivers\", options);
   
             driver.Navigate().GoToUrl("https://appeals.cuyahogacounty.gov/");
 
@@ -135,6 +135,7 @@ namespace SeleniumCSharp
             if (driver != null)
             {
                 driver.Quit();
+                driver.Dispose();
             }
         }
     }
