@@ -18,4 +18,5 @@ jobs:
     - name: Run test command
       run: |
         cd "..\..\appeals-unit-tests\appeals-unit-tests"
+        dotnet build
         vstest.console.exe
